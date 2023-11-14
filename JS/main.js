@@ -7,10 +7,8 @@ function result() {
     let expression = document.getElementById('display').value;
 
     try {
-        // Используем Function() вместо eval()
         let result = /^[0-9+\-*/.\s]+$/.test(expression) ? new Function('return ' + expression)() : '0';
 
-        // Проверка на деление на ноль
         if (!isFinite(result)) {
             throw new Error("Error");
         }
